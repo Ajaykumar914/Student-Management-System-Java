@@ -1,3 +1,5 @@
+package model;
+
 public class Student {
 
     private int id;
@@ -12,6 +14,7 @@ public class Student {
         this.course = course;
     }
 
+    // Getters
     public int getId() {
         return id;
     }
@@ -28,6 +31,7 @@ public class Student {
         return course;
     }
 
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -46,5 +50,10 @@ public class Student {
         System.out.println("Name : " + name);
         System.out.println("Age : " + age);
         System.out.println("Course : " + course);
+    }
+
+    @Override
+    public String toString(){
+        return id + "," + name + "," + age + "," + course;
     }
 }

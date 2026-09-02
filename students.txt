@@ -1,2 +1,3 @@
 101,Ajay,20,CSE
 102,abhi,20,EE
+103,Alok Kumar,24,Electrical Engineering
