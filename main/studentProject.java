@@ -1,5 +1,6 @@
 package main;
 
+import exception.StudentNotFoundException;
 import model.Student;
 import service.StudentManager;
 
@@ -11,7 +12,6 @@ public class studentProject {    // its the Main Class
         Scanner sc = new Scanner(System.in);
 
         StudentManager manager = new StudentManager();
-        manager.loadStudents();
 
         while (true) {
 
@@ -45,7 +45,7 @@ public class studentProject {    // its the Main Class
                         id = Integer.parseInt(sc.nextLine());
                     }
                     catch (NumberFormatException e){
-                        System.out.println("Invalid ID.");
+                        System.out.println("Invalid ID. Please enter a number.");
                         break;
                     }
 
@@ -101,12 +101,16 @@ public class studentProject {    // its the Main Class
 
                         id = Integer.parseInt(sc.nextLine());
 
-                        manager.searchStudent(id);
+                        Student s = manager.searchStudent(id);
+                        System.out.println(s);
 
                     } catch (NumberFormatException e) {
 
                         System.out.println(
                                 "Invalid ID.");
+                    }
+                    catch (StudentNotFoundException e){
+                        System.out.println(e.getMessage());
                     }
 
                     break;
@@ -121,7 +125,7 @@ public class studentProject {    // its the Main Class
 
                     } catch (NumberFormatException e) {
 
-                        System.out.println("Invalid ID.");
+                        System.out.println("Invalid ID.Please enter a number.");
                         break;
                     }
 
@@ -175,7 +179,7 @@ public class studentProject {    // its the Main Class
 
                 case 5:
 
-                    System.out.print("Enter model.Student ID : ");
+                    System.out.print("Enter Student ID : ");
 
                     try {
 
@@ -192,8 +196,7 @@ public class studentProject {    // its the Main Class
                     break;
 
                 case 6:
-                    manager.saveStudents();
-                    System.out.println("Thank You for using model.Student Management System.");
+                    System.out.println("Thank You for using Student Management System.");
                     sc.close();
                    return;
 

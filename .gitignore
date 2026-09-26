@@ -1,11 +1,13 @@
-# IntelliJ IDEA
+# dont upload intellij idea settings
 .idea/
-
-# Compiled Java files
+dont upload intellij project file
+*.iml
+# dont upload compiled Java files
 *.class
 
-# Build/output directory
+# dont upload compiled output
 out/
-
-# Temporary files
-*.log
+# dont upload maven build files
+target/
+# dont upload old file-storage data
+students.txt

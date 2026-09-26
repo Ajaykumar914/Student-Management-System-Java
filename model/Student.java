@@ -43,17 +43,4 @@ public class Student {
     public void setCourse(String course) {
         this.course = course;
     }
-
-    public void display() {
-        System.out.println("--------------------------------");
-        System.out.println("ID : " + id);
-        System.out.println("Name : " + name);
-        System.out.println("Age : " + age);
-        System.out.println("Course : " + course);
-    }
-
-    @Override
-    public String toString(){
-        return id + "," + name + "," + age + "," + course;
-    }
 }
